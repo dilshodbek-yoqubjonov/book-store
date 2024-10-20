@@ -1,0 +1,46 @@
+[
+  {
+    "id": 1,
+    "name": "Fantastika"
+  },
+  {
+    "id": 2,
+    "name": " Detektiv"
+  },
+  {
+    "id": 3,
+    "name": "Sarguzasht"
+  },
+  {
+    "id": 4,
+    "name": "Romantika"
+  },
+  {
+    "id": 5,
+    "name": "Ilmiy-fantastika"
+  },
+  {
+    "id": 6,
+    "name": "Tarixiy roman"
+  },
+  {
+    "id": 7,
+    "name": "Fikriy adabiyot"
+  },
+  {
+    "id": 8,
+    "name": "Biografiya"
+  },
+  {
+    "id": 9,
+    "name": "Hikoya"
+  },
+  {
+    "id": 10,
+    "name": "Poyezdiya"
+  },
+  {
+    "id": 11,
+    "name": "Poyabzal"
+  }
+]

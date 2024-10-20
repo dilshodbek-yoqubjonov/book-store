@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="/css/adminPanel.css" />
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="admin-panel clearfix">
+      <div class="slidebar">
+        <div class="logo">
+          <a href="#orders"></a>
+        </div>
+        
+          
+          <!-- Modal -->
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h1 class="modal-title fs-5" id="staticBackdropLabel">Kitob qo'shish</h1>
+      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <div class="modal-body">
+        <form method="POST" action="/add">
+            <!-- Input for Name -->
+            <div class="mb-3">
+              <label for="inputName" class="form-label">Name</label>
+              <input type="text" class="form-control" id="inputName" name="title" required>
+            </div>
+          
+            <!-- Input for Category ID (max: 10) -->
+            <div class="mb-3">
+              <label for="inputCategoryID" class="form-label">Category ID</label>
+              <input type="text" class="form-control" id="inputCategoryID" name="categoryId"  required>
+            </div>
+          
+            <!-- Input for Author ID (max: 10) -->
+            <div class="mb-3">
+              <label for="inputAuthorID" class="form-label">Author ID</label>
+              <input type="text" class="form-control" id="inputAuthorID" name="authorId"  required>
+            </div>
+          
+            <!-- Input for Description -->
+            <div class="mb-3">
+              <label for="inputDescription" class="form-label">Description</label>
+              <textarea class="form-control" id="inputDescription" name="description" rows="3" required></textarea>
+            </div>
+          
+            <!-- Input for Amount -->
+            <div class="mb-3">
+              <label for="inputAmount" class="form-label">Amount</label>
+              <input type="number" class="form-control" id="inputAmount" name="count" required>
+            </div>
+            <div class="mb-3">
+              <label for="inputAmount" class="form-label">Price</label>
+              <input type="number" class="form-control" id="inputAmount" name="price" required>
+            </div>
+          
+            <!-- Input for Image URL -->
+            <div class="mb-3">
+              <label for="inputImgURL" class="form-label">Image URL</label>
+              <input type="url" class="form-control" id="inputImgURL" name="image" required>
+            </div>
+          
+            <!-- Submit Button -->
+            
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Yopish</button>
+              <button class="btn btn-primary">Saqlash</button>
+            </div>
+          </form>
+    </div>
+    
+  </div>
+</div>
+</div>
+        <ul>
+            <a href="#cate">Categories</a></li>
+            <!-- Button trigger modal -->
+            <a class="text-decoration-none" href="#posts"><button style=" border-radius: 30px; margin-left: 15%; margin-top: 8px;" type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#staticBackdrop12">
+                Category qo'shish
+              </button>
+            
+            <!-- Modal -->
+            
+          <li>
+          <li><a href="#posts">Authors</a></li>
+        </a>
+        <a class="text-decoration-none" href="#posts"><button style=" border-radius: 30px; margin-left: 15%; margin-top: 8px;" type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#staticBackdrop1">
+            Author qo'shish
+          </button></a> 
+          <a href="#main" id="targeted">Books list</a></li>
+          
+          <a class="text-decoration-none" href="#main"><button style="  border-radius: 30px; margin-left: 15%;" type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+            Kitob qo'shish
+          </button></a>
+          <div class="modal fade" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="staticBackdropLabel">Author qo'shish</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <form method="POST" action="/author">
+                      <div class="form-group">
+                        <label for="fullname">Fullname</label>
+                        <input type="text" class="form-control" id="fullname" name="fullname" required>
+                      </div>
+                      
+  <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Yopish</button>
+                  <button class="btn btn-primary">Saqlash</button>
+                </div>
+                    </form>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+          <li>
+        
+        <!-- Modal -->
+        <div class="modal fade" id="staticBackdrop12" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="staticBackdropLabel">Category qo'shish</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <form method="POST" action="/category">
+                    <div class="form-group">
+                      <label for="fullname">name</label>
+                      <input type="text" class="form-control" id="fullname" name="name" required>
+                    </div>
+                    
+<div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Yopish</button>
+                <button class="btn btn-primary">Saqlash</button>
+              </div>
+                  </form>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+        </ul>
+      </div>
+      <div class="main">
+        
+        <ul class="topbar clearfix">
+          <li><a href="#main">Main</a></li>
+        </ul>
+        <div class="mainContent clearfix">
+          <div id="main">
+            <h2 class="header"><span class="icon"></span>Books list</h2>
+             <!-- Button trigger modal -->
+             
+             <table style=" margin-left: 20%;" class="table">
+                 <thead>
+            
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Category</th>
+                        <th scope="col">Author</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Amount</th>
+                        <th scope="col">image</th>
+                      </tr>
+                    </thead>
+                    <tbody> 
+                        <% books.forEach(e => { %>
+                      <tr>
+                        <th scope="row"><%= e.id %></th>
+                        <td><%= e.title %></td>
+                        <td><%= e.categoryId %></td>
+                        <td><%= e.authorId %></td>
+                        <td><%= e.description %></td>
+                        <td><%= e.count %></td>
+                        <td><img width="30px" src=<%= e.image %> alt=""></td>
+                        
+                      </tr>
+                      
+                      <% }) %>
+                    </tbody>
+                  </table>
+            
+          </div>
+
+      
+          <div id="posts">
+            <h2 class="header">posts</h2>
+            <div class="monitor">
+              <h4>List</h4>
+              <div class="clearfix">
+                
+                    <ul class="content">
+                        <li>content</li><% author.forEach(e => { %>
+                        <li class="posts">
+                          <span class="count"><%= e.id %></span><a href=""><%= e.fullname %></a>
+                         <% }) %></li>
+                      </ul>
+               
+              </div>
+              
+            </div>
+            
+          </div>
+          <div id="cate">
+            <h2 class="header">posts</h2>
+            <div class="monitor">
+              <h4>List</h4>
+              <div class="clearfix">
+                
+                    <ul class="content">
+                        <li>content</li>
+                        <%categories.forEach(e => { %>
+                        <li class="posts">
+                          <span class="count"><%= e.id %></span><a href=""><%= e.name %></a>
+                         <% }) %>
+                        </li>
+                      </ul>
+               
+              </div>
+              
+            </div>
+            
+          </div>
+          <div id="orders">
+            <h2 class="header">Orders</h2>
+            <div class="monitor">
+              <h4>Order list</h4>
+              <div class="clearfix">
+                
+                    <ul class="content">
+                        <li>Orders</li>
+                    
+                            <div id="main">
+                                <h2 class="header"><span class="icon"></span>Books list</h2>
+                                 <!-- Button trigger modal -->
+                                 
+                                 <table style=" margin-left: 20%;" class="table">
+                                     <thead>
+                                
+                                          <tr>
+                                            <th scope="col">#</th>
+                                            <th scope="col">Name</th>
+                                            <th scope="col">Number</th>
+                                            <th scope="col">Address</th>
+                                            <th scope="col">Count</th>
+                                            <th scope="col">bookId</th>
+                                            <th scope="col">totalPrice</th>
+                                          </tr>
+                                        </thead>
+                                        <tbody> 
+                                            <% orders.forEach(e => { %>
+                                          <tr>
+                                            <th scope="row"><%= e.id %></th>
+                                            <td><%= e.clientName %></td>
+                                            <td><%= e.clientPhone %></td>
+                                            <td><%= e.address %></td>
+                                            <td><%= e.count %></td>
+                                            <td><%= e.bookId %></td>
+                                            <td><%= e.totalPrice %> $</td>
+                                            
+                                          </tr>
+                                          
+                                          <% }) %>
+                                        </tbody>
+                                      </table>
+                                
+                              </div>
+                       
+                      </ul>
+               
+              </div>
+              
+            </div>
+            
+          </div>
+         
+        </div>
+      </div>
+      <ul class="statusbar">
+        <li><a href=""></a></li>
+        <li><a href=""></a></li>
+        <li class="profiles-setting"><a href=""></a></li>
+        <li class="logout"><a href=""></a></li>
+      </ul>
+    </div>
+   
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+ 
+  </body>
+</html>

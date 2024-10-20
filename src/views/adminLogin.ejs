@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Log in</title>
+  <link rel="stylesheet" href="/css/admin.css">
+</head>
+<body>
+  <div class="container">
+		<div class="header">
+      <h4>Admin login</h4>
+      <h3>Login to Continue</h3>
+      
+		</div>
+
+		<form method="post" action="/admin" >
+				<div class="input">
+						<div class="label">
+								<i class="fa fa-sign-in"></i>
+								<p>admin log in</p>
+						</div class="label">
+						<input name="username" type="text">
+				</div>
+				<div class="input">
+						<div class="label">
+								<i class="fa fa-unlock-alt"></i>
+								<p>password</p>
+						</div class="label">
+						<input name="password" type="password">
+				</div>
+				<a href="/add"><button class="btn">Login</button></a>
+		</form>
+		<div class="login-with">
+				<ul>
+						<li>
+								<span><i class="fa fa-facebook"></i></span>
+								<p>login with facebook</p>
+						</li>
+						<li>
+								<span>
+										<i class="fa fa-google"></i>
+								</span>
+								<p>login with google</p>
+						</li>
+						<li>
+								<span>
+										<i class="fa fa-twitter"></i>
+								</span>
+								<p>login with twitter</p>
+						</li>
+				</ul>
+		</div>
+		<div class="footer">
+				<p>forget your password?</p>
+				<p>not signed up</p>
+		</div>
+		<div class="over"></div>
+		<div class="overlayer">
+				<p>Welcome!</p>
+				<i class="fa fa-close"></i>
+		</div>
+</div>
+<script src="/js/admin.js"></script>
+</body>
+</html>

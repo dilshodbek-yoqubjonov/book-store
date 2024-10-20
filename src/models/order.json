@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "bookId": 1,
+    "clientName": "Sarvarbek",
+    "clientPhone": "998507299004",
+    "count": 5,
+    "address": "Toshkent",
+    "totalPrice": 75
+  },
+  {
+    "id": 2,
+    "bookId": 2,
+    "clientName": "Dilshodbek",
+    "clientPhone": "998998568656",
+    "count": 5,
+    "address": "Toshkent",
+    "totalPrice": 60
+  },
+  {
+    "id": 3,
+    "bookId": 1,
+    "clientName": "Mahmudjon",
+    "clientPhone": "9985586652",
+    "count": 12,
+    "address": "Toshkent",
+    "totalPrice": 180
+  }
+]
